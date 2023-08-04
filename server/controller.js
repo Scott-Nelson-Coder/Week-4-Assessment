@@ -1,3 +1,5 @@
+let fortunes = []
+
 module.exports = {
 
     getCompliment: (req, res) => {
@@ -10,6 +12,7 @@ module.exports = {
         res.status(200).send(randomCompliment);
     },
 
+    //function to get random fortune
     getFortune: (req,res) => {
         const fortunes = ["A hunch is creativity trying to tell you something.", "A friend asks only for your time not your money.", "Allow compassion to guide your decisions.", "Believe in yourself and others will too.", "Do not let ambitions overshadow small success."]
 
@@ -17,6 +20,17 @@ module.exports = {
         let randomFortunes = fortunes[randomNum];
 
         res.status(200).send(randomFortunes)
+    },
+
+
+    addFortune: (req, res) => {
+        console.log(req.body)
+        fortunes.push(req.body.newFortune)
+        res.status(200).send(fortunes)
+    },
+
+    getList: (req, res)=> {
+        res.status(200).send(fortunes)
     }
 
 }

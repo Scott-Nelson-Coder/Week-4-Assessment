@@ -7,12 +7,14 @@ app.use(cors());
 app.use(express.json());
 
 
+//deconstruct module export
+const {getCompliment, getFortune, addFortune, getList } = require('./controller')
 
-const { getCompliment, getFortune } = require('./controller')
 
-
-app.get("/api/compliment", getCompliment,);
+app.get("/api/compliment", getCompliment)
 app.get("/api/fortune", getFortune)
+app.post("/api/fortunes", addFortune)
+app.get("/api/fortunes", getList)
 
 
 
