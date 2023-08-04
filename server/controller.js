@@ -11,7 +11,12 @@ module.exports = {
     },
 
     getFortune: (req,res) => {
-        const fortunes = []
+        const fortunes = ["A hunch is creativity trying to tell you something.", "A friend asks only for your time not your money.", "Allow compassion to guide your decisions.", "Believe in yourself and others will too.", "Do not let ambitions overshadow small success."]
+
+        let randomNum = Math.floor(Math.random() * fortunes.length);
+        let randomFortunes = fortunes[randomNum];
+
+        res.status(200).send(randomFortunes)
     }
 
 }

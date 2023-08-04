@@ -8,11 +8,11 @@ app.use(express.json());
 
 
 
-const { getCompliment } = require('./controller')
+const { getCompliment, getFortune } = require('./controller')
 
 
-app.get("/api/compliment", getCompliment);
-
+app.get("/api/compliment", getCompliment,);
+app.get("/api/fortune", getFortune)
 
 
 
